@@ -1,0 +1,46 @@
+# Зависимости
+node_modules/
+package-lock.json
+
+# Сборка
+dist/
+*.exe
+*.AppImage
+*.dmg
+*.blockmap
+*.nsis
+
+# Временные файлы
+tmp-doc-convert/
+*.log
+*.tmp
+*.cache
+
+# Пользовательские настройки
+config.json
+public/config.json
+public/server-win32.exe
+public/pkg-output.log
+
+# Папка с УМК (пользовательские данные)
+умк/
+public/умк/
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Локальные скрипты (если не нужны в репозитории)
+build-win.sh
+script.py
+
+# Файлы IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# .env
+.env
+.env.local

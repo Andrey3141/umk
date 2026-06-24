@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>УМК - Могилёвский государственный технологический колледж</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/viewer.css">
+</head>
+<body>
+<div class="app">
+    <!-- Шапка -->
+    <div class="header">
+        <div class="college">
+            <div class="college-icon"><img src="mgtk_icon.svg" alt="МГТК"></div>
+            <div>
+                <h1>Могилёвский государственный технологический колледж</h1>
+                <!-- Этот текст всегда белый (в шапке) -->
+                <p class="white-text">Учебно-методический комплекс мастера производственного обучения</p>
+            </div>
+        </div>
+        <div class="stats-badge">
+            <div class="stats-badge-item"><i class="fas fa-folder"></i><span id="folderCount">-</span></div>
+            <div class="stats-badge-item"><i class="fas fa-file"></i><span id="fileCount">-</span></div>
+            <div class="stats-badge-item"><i class="fas fa-database"></i><span id="sizeCount">-</span></div>
+            <div class="settings-icon" id="settingsBtn"><i class="fas fa-cog"></i></div>
+        </div>
+    </div>
+
+    <!-- Основная часть -->
+    <div class="main-layout">
+        <!-- Боковая панель -->
+        <div class="sidebar">
+            <div class="info-card">
+                <h3><i class="fas fa-info-circle"></i> О комплексе</h3>
+                <!-- Адаптивный текст: чёрный в светлой теме, белый в тёмной -->
+                <p class="adaptive-text" style="font-size:0.85rem">УМК для мастера производственного обучения</p>
+            </div>
+            <div class="info-card">
+                <h3><i class="fas fa-chart-pie"></i> Статистика</h3>
+                <div class="stat-row"><span>📁 Папок:</span><span class="stat-number" id="totalFolders">0</span></div>
+                <div class="stat-row"><span>📄 Файлов:</span><span class="stat-number" id="totalFiles">0</span></div>
+                <div class="stat-row"><span>💾 Объём:</span><span class="stat-number" id="totalSize">0</span></div>
+            </div>
+            <div class="info-card">
+                <h3><i class="fas fa-graduation-cap"></i> Дисциплина</h3>
+                <!-- Адаптивный текст: чёрный в светлой теме, белый в тёмной -->
+                <p class="adaptive-text" style="font-size:0.8rem">Современные информационные системы в профессиональной деятельности мастера п/о</p>
+            </div>
+        </div>
+
+        <!-- Файловый менеджер -->
+        <div class="explorer">
+            <div class="toolbar">
+                <button class="nav-btn" id="backBtn"><i class="fas fa-arrow-left"></i> Назад</button>
+                <button class="nav-btn" id="homeBtn"><i class="fas fa-home"></i> Корень</button>
+                <div class="path-bar" id="pathBar">/</div>
+            </div>
+            <div class="items-grid" id="itemsGrid">
+                <div class="empty-folder"><i class="fas fa-spinner fa-pulse"></i> Загрузка...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Просмотрщик файлов -->
+<div id="fileViewer" class="file-viewer">
+    <div class="viewer-container">
+        <div class="viewer-header">
+            <h3 id="viewerFileName">Просмотр файла</h3>
+            <button class="viewer-close" id="viewerClose">&times;</button>
+        </div>
+
+        <div class="editor-toolbar" id="editorToolbar">
+            <button class="editor-btn" id="saveEditBtn">Сохранить</button>
+            <button class="editor-btn secondary" id="cancelEditBtn">Отмена</button>
+        </div>
+
+        <div class="viewer-content" id="viewerContent">
+            <div style="text-align:center; padding:40px;">Загрузка...</div>
+        </div>
+    </div>
+</div>
+
+<!-- Скрипты -->
+<script src="js/utils.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/viewer.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

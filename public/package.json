@@ -1,0 +1,43 @@
+{
+  "name": "umk-mgtk",
+  "version": "2.1.0",
+  "description": "Учебно-методический комплекс МГТК",
+  "main": "server.js",
+  "bin": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "pkg . --targets node18-linux-x64 --output umk-linux"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.18.2",
+    "mammoth": "^1.12.0",
+    "pdf-parse": "^1.1.4",
+    "underscore": "^1.13.8",
+    "word-extractor": "^1.0.4",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "pkg": "^5.8.1"
+  },
+  "pkg": {
+    "scripts": [
+      "server.js"
+    ],
+    "assets": [
+      "public/**/*",
+      "node_modules/word-extractor/**/*",
+      "node_modules/mammoth/**/*",
+      "node_modules/xlsx/**/*",
+      "node_modules/pdf-parse/**/*",
+      "node_modules/underscore/**/*",
+      "node_modules/word-extractor/lib/**/*",
+      "node_modules/word-extractor/node_modules/**/*"
+    ],
+    "targets": [
+      "node18-linux-x64"
+    ]
+  }
+}
